@@ -1,0 +1,38 @@
+.content{
+    background-color: #F2F3F4;
+}
+
+.background{
+    background-color: #1F4872;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.new-background{
+    background-color: #2D587F;
+    margin: 20px;
+    padding:20px;
+    color: white;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    /* margin: auto; */
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+h5, p {
+    margin: 0;
+    font-size: 1.1em;
+}
+.label {
+    font-weight: bold;
+}

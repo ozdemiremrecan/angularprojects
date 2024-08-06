@@ -1,0 +1,43 @@
+<div class="content min-vh-100">
+    <div class="container  background w-50 p-5 border rounded">
+            @if (isFetching()) {
+                <h2 class="text-white">Ip details for {{searchedValue().ip}}</h2>
+                <div class="new-background">
+                    <ul>
+                        <li><span class="label">Ip:</span> <span>{{searchedValue().ip}}</span></li>
+                        <li><span class="label">City:</span> <span>{{searchedValue().city}}</span></li>
+                        <li><span class="label">Continent Code:</span> <span>{{searchedValue().continent_code}}</span></li>
+                        <li><span class="label">Continent Name:</span> <span>{{searchedValue().continent_name}}</span></li>
+                        <li><span class="label">Geoname ID:</span> <span>{{searchedValue().geoname_id}}</span></li>
+                        <li><span class="label">Is EU:</span> <span>{{searchedValue().is_eu}}</span></li>
+                        <li><span class="label">Latitude:</span> <span>{{searchedValue().lat}}</span></li>
+                        <li><span class="label">Local Time:</span> <span>{{searchedValue().localtime}}</span></li>
+                        <li><span class="label">Local Time Epoch:</span> <span>{{searchedValue().localtime_epoch}}</span></li>
+                        <li><span class="label">Longitude:</span> <span>{{searchedValue().lon}}</span></li>
+                        <li><span class="label">Region:</span> <span>{{searchedValue().region}}</span></li>
+                        <li><span class="label">Type:</span> <span>{{searchedValue().type}}</span></li>
+                        <li><span class="label">Time Zone ID:</span> <span>{{searchedValue().tz_id}}</span></li>
+                    </ul>
+                    <button (click)="reload()" class="btn btn-danger">Search Ip!</button>
+                </div>
+            }@else {
+                <div class="row">
+                    <div class="header">
+                        <h1 class="text-white">Look up IP Address Location</h1>
+                    </div>
+                    <p class="text-white">If you can find out the IPv4 or IPv6 address of an Internet user, you can get an idea what part of the country or world they're in by using our IP Lookup tool. What to do: Enter the IP address you're curious about in the box below, then click "Get IP Details."</p>
+                    <div class="col-12">
+                        <form (ngSubmit)="searchIpLookup(input.value)">
+                            <div class="d-flex mb-2 mt-5">
+                                <input type="text" class="form-control w-75" placeholder="Enter Ip Address." #input>
+                                <button class="btn btn-danger w-25">Get Ip Details!</button>
+                            </div>
+                        </form>
+                    </div>
+                    @if (errorMessage()) {
+                        <p class="text-white">{{errorMessage()}}</p>
+                    }
+                </div> 
+            }
+    </div>
+</div>
